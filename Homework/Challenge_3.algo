@@ -1,0 +1,41 @@
+ALGORITHM Challenge_Homework_3
+VAR
+    a , b , c , Delta : INTEGER;
+    x0 , x1 , x2 : FLOAT;
+FUNCTION Power(Inp : INTEGER , Out : INTEGER) : INTEGER
+    VAR
+        pow , i : INTEGER;
+    BEGIN
+        
+        pow := 1;
+        
+        FOR i FROM 1 TO Out  STEP 1  DO
+            pow := pow * Inp;
+        END_FOR
+        
+        RETURN pow;
+    END
+BEGIN
+    
+    Write("This Algorithme to solve ax² + bx + c = 0 ");
+    Write("Entre the a :")
+    Read(a);
+    Write("Entre the b :")
+    Read(b);
+    Write("Entre the c :")
+    Read(c);  
+
+    Delta := Power(b , 2) - 4*a*c;
+    b := (-1) * b ;
+
+    IF (Delta > 0) THEN
+        x1 = (b+sqrt(Delta))/(2*a);
+        x2 = (b-sqrt(Delta))/(2*a);
+        Write("This Equition have Two solution x1 :", x1 ," and x2 :" , x2);
+    ELSE_IF (Delta = 0) THEN
+        x0 = b/(2*a);
+        Write("This Equition have One solution x0 : ", x0);
+    ELSE
+        Write("This Equition have no solution !!!");
+    END_IF
+END

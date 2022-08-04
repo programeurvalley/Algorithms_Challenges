@@ -1,0 +1,34 @@
+ALGORITHM Challenge_Homework_5
+VAR
+    x , i : INTEGER;
+    arr : ARRAY_OF INTEGER[200];
+    check : BOOLEAN;
+BEGIN
+    
+    Write("Entre you number :");
+    Read(x);
+
+    FOR i FROM 1 TO x STEP 1  DO
+        arr[i] = i;
+    END_FOR
+    
+    i := 2;
+
+    WHILE (i < x-1) DO
+        IF (x % arr[i] = 0) THEN
+            check := FALSE;
+            i := x;
+        ELSE
+            check := TRUE;
+        END_IF
+        i := i + 1;
+    END_WHILE
+
+    IF (check = TRUE) THEN
+        Write("This is a Prime Number !!! ");
+    ELSE
+        Write("This is  Not a Prime Number :( ");
+    END_IF
+    
+END
+

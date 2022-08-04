@@ -1,0 +1,94 @@
+ALGORITHM Challenge_Advanced_4
+VAR
+    i  , s: INTEGER;
+    date : STRING[6];
+    day , month , year : STRING[2];
+    arr : ARRAY_OF INTEGER[10];
+BEGIN
+    
+    Write("Entre a date in format an integer of 6 digits :");
+    Read(date);
+
+    FOR i FROM 2 TO 6 STEP 2  DO
+        IF (i = 2) THEN
+            day := date[i-1] + date[i];
+        ELSE_IF (i = 4 AND i > 2) THEN
+            month := date[i-1] + date[i];
+        ELSE
+            IF (i = 6) THEN
+                year := date[i-1] + date[i];
+            END_IF
+        END_IF
+    END_FOR
+
+    s := month;
+
+    SWITCH (s) DO
+        case 1 : 
+            Write("Day :", day);
+            Write("Month: January");
+            Write("Year : 20",year);
+            BREAK;
+        case 2 : 
+            Write("Day :", day);
+            Write("Month: February");
+            Write("Year : 20",year);
+            BREAK;
+        case 3 : 
+            Write("Day :", day);
+            Write("Month: March");
+            Write("Year : 20",year);
+            BREAK;
+        case 4 : 
+            Write("Day :", day);
+            Write("Month: April");
+            Write("Year : 20",year);
+            BREAK;
+        case 5 : 
+            Write("Day :", day);
+            Write("Month: May");
+            Write("Year : 20",year);
+            BREAK;
+        case 6 :
+            Write("Day :", day); 
+            Write("Month: June");
+            Write("Year : 20",year);
+            BREAK;
+        case 7 : 
+            Write("Day :", day);
+            Write("Day :", day);
+            Write("Month: July");
+            Write("Year : 20",year);
+            BREAK;
+        case 8 :
+            Write("Day :", day); 
+            Write("Month: August");
+            Write("Year : 20",year);
+            BREAK;
+        case 9 : 
+            Write("Day :", day);
+            Write("Month: September");
+            Write("Year : 20",year);
+            BREAK;
+        case 10 :
+            Write("Day :", day); 
+            Write("Month: October");
+            Write("Year : 20",year);
+            BREAK;
+        case 11 : 
+            Write("Day :", day);
+            Write("Month: November");
+            Write("Year : 20",year);
+            BREAK;
+        case 12 :
+            Write("Day :", day); 
+            Write("Month: December");
+            Write("Year : 20",year);
+            BREAK;
+        default :
+            Write("This is Month value selector .");
+    END_SWITCH
+
+
+END
+

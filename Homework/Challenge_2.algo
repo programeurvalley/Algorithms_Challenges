@@ -1,0 +1,33 @@
+ALGORITHM Challenge_Homework_2
+VAR
+    arr : ARRAY_OF CHAR[50];
+    len, i : INTEGER;
+    word : CHAR;
+    check : BOOLEAN;
+BEGIN
+    
+    Write("Give me the array length");
+    Read(len);
+
+    FOR i FROM 1 TO len STEP 1  DO
+        Read(arr[i]);
+    END_FOR
+    
+    Write("Entre your character :");
+    Read(word);
+
+    check := FALSE;
+    
+    FOR i FROM 1 TO arr.length STEP 1 DO
+        IF (word = arr[i]) THEN
+            check = TRUE;
+        END_IF
+    END_FOR
+
+    IF (check = TRUE) THEN
+        Write("Found !!! You caractre you have entred is in the Array . ");
+    ELSE
+        Write("Not Found !!! You caractre you have entred is not in the Array . ");
+    END_IF  
+    
+END

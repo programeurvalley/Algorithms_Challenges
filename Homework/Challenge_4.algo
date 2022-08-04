@@ -1,0 +1,15 @@
+ALGORITHM Challenge_Homework_4
+VAR
+    x : INTEGER;
+BEGIN
+    
+    Write("Entre you number :");
+    Read(x);
+
+    IF (x % 3 = 0) THEN
+        Write("Your number is a multipe of 3");
+    ELSE
+        Write("Your number is Not a multipe of 3 !!! ");
+    END_IF
+    
+END

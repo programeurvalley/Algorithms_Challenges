@@ -1,0 +1,20 @@
+ALGORITHM Challenge_Advanced_1
+VAR
+    x , y , z : INTEGER;
+    i , j , k : INTEGER;
+BEGIN
+    Write("Entre the value of x :");
+    Read(x);
+    Write("Entre the value of y :");
+    Read(y);
+    Write("Entre the value of z :");
+    Read(z);
+    
+    i := y ;
+    j := z ;
+    k := x ;
+    
+    Write("After permutations we have x :", i , " and y :" , j , "and z : " , k );
+    
+END
+

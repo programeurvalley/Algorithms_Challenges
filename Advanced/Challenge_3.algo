@@ -1,0 +1,76 @@
+ALGORITHM Challenge_Advanced_3
+CONST 
+    r1 : FLOAT := 0.7; 
+    r2 : FLOAT := 0.4; 
+    r3 : FLOAT := 0.2;
+    p_d : INTEGER := 100; 
+    ins : FLOAT := 0.3;
+    VAT : FLOAT := 0.18;
+VAR
+    days , kilo : INTEGER;
+
+FUNCTION RentalByKilo(num_kilo : INTEGER , num_days : INTEGER) : FLOAT
+VAR
+    s : INTEGER;
+    cost : FLOAT;
+BEGIN
+    IF (num_kilo > 0) THEN
+        IF (num_kilo <= 100) THEN
+            s := 1;
+        ELSE_IF (num_kilo >= 101 AND num_kilo <= 1000) THEN
+            s := 2;
+        ELSE
+            s := 3;
+        END_IF
+    ELSE
+        Write("You have entred wrong values !!!");
+    END_IF
+
+    SWITCH (s) DO
+        case 1 : 
+            cost := num_kilo * r1;
+            BREAK;
+        case 2 : 
+            cost := 100 * r1;
+            num_kilo := num_kilo -100;
+            cost := cost + num_kilo * r2;
+        case 3 : 
+            cost := 100 * r1;   1250 
+            cost := cost + 900*r2;
+            num_kilo := num_kilo -1000;
+            cost := cost + num_kilo * r3;
+        default : 
+            Write("Select between 1 and 3 .")
+    END_SWITCH
+
+    cost := cost + num_days*ins ;
+    cost := cost + cost * VAT;
+    RETURN cost;
+END
+
+FUNCTION DailyRate(num_days : INTEGER) : FLOAT
+VAR
+    cost : FLOAT;
+BEGIN
+    cost := p_d*num_days + num_days*ins;
+    cost := cost + cost * VAT;
+    RETURN cost;
+END
+
+BEGIN
+    
+    Write("Entre the Number of kilometre :");
+    Read(kilo);
+    Write("Entre the Number of days :");
+    Read(days);
+
+    Write("The Cost Using the Rental by the kilometer is :" , RentalByKilo(kilo , days));
+    Write("The Cost Using the Daily rate is :" , DailyRate(days));
+
+    IF (RentalByKilo(kilo , days) < DailyRate(days)) THEN
+        Write("Using the Rental by the kilometer is Better for you");
+    ELSE
+        Write("Using the Daily rate is Better for you");
+    END_IF
+
+END

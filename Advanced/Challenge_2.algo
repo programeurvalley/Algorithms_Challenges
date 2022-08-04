@@ -1,0 +1,25 @@
+ALGORITHM Challenge_Advanced_2
+VAR
+    x , y , z : INTEGER;
+FUNCTION multi(Inp : INTEGER , Out : INTEGER) : INTEGER
+VAR
+    mul , i : INTEGER;
+BEGIN
+    
+    mul := 0 ;
+    FOR i FROM 1 TO Out STEP 1  DO
+        mul := mul + Inp;
+    END_FOR
+    RETURN mul;
+END
+BEGIN
+    Write("Entre the value of x :");
+    Read(x);
+    Write("Entre the value of y :");
+    Read(y);
+
+    Write("The simple multipication of x and y is : ", x * y);
+    Write("The multipication using addition operation  is : " multi(x , y));
+
+    
+END
