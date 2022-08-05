@@ -4,6 +4,7 @@ VAR
     date : STRING[6];
     day , month , year : STRING[2];
     arr : ARRAY_OF INTEGER[10];
+    arr_str : ARRAY_OF STRING[12]
 BEGIN
     
     Write("Entre a date in format an integer of 6 digits :");
@@ -20,7 +21,8 @@ BEGIN
             END_IF
         END_IF
     END_FOR
-
+    
+    /*
     s := month;
 
     SWITCH (s) DO
@@ -88,7 +90,14 @@ BEGIN
         default :
             Write("This is Month value selector .");
     END_SWITCH
+*/
 
+arr_str := ["January","February" , "March", "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"];
+            
+            month := TO NUMBER(month);
+            Write("Day :", day); 
+            Write("Month: ", arr_str[month]);
+            Write("Year : 20",year);
 
 END
 
