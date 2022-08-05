@@ -1,7 +1,7 @@
 ALGORITHM Challenge_Homework_2
 VAR
     arr : ARRAY_OF CHAR[50];
-    len, i : INTEGER;
+    len, i , count: INTEGER;
     word : CHAR;
     check : BOOLEAN;
 BEGIN
@@ -17,15 +17,17 @@ BEGIN
     Read(word);
 
     check := FALSE;
+    count := 0;
     
     FOR i FROM 1 TO arr.length STEP 1 DO
         IF (word = arr[i]) THEN
             check = TRUE;
+            count := count +1 ;
         END_IF
     END_FOR
 
     IF (check = TRUE) THEN
-        Write("Found !!! You caractre you have entred is in the Array . ");
+        Write("Found !!! You caractre you have entred is in the Array , Reapeted  ", count);
     ELSE
         Write("Not Found !!! You caractre you have entred is not in the Array . ");
     END_IF  
