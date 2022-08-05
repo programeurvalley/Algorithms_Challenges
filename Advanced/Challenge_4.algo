@@ -94,7 +94,7 @@ BEGIN
 
 arr_str := ["January","February" , "March", "April" , "May" , "June" , "July" , "August" , "September" , "October" , "November" , "December"];
             
-            month := TO NUMBER(month);
+            month := TO_NUMBER(month);
             Write("Day :", day); 
             Write("Month: ", arr_str[month]);
             Write("Year : 20",year);
