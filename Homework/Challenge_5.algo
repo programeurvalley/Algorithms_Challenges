@@ -8,22 +8,16 @@ BEGIN
     Write("Entre you number :");
     Read(x);
 
-    FOR i FROM 1 TO x STEP 1  DO
-        arr[i] = i;
-    END_FOR
-    
-    i := 2;
+    check := TRUE;
 
-    WHILE (i < x-1) DO
-        IF (x % arr[i] = 0) THEN
+    FOR i FROM 1 TO x STEP 1  DO
+        IF (x % i = 0) THEN
             check := FALSE;
             i := x;
-        ELSE
-            check := TRUE;
         END_IF
         i := i + 1;
-    END_WHILE
-
+    END_FOR
+    
     IF (check = TRUE) THEN
         Write("This is a Prime Number !!! ");
     ELSE
